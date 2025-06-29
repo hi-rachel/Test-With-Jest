@@ -2,6 +2,6 @@
 export default {
   preset: "ts-jest",
   testEnvironment: "node",
-  rootDir: "src",
-  setupFilesAfterEnv: ["./testSetup.js"],
+  rootDir: ".",
+  setupFilesAfterEnv: ["./src/testSetup.js"],
 };
