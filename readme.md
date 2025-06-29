@@ -60,15 +60,17 @@
 
 [Jest CLI](https://jestjs.io/docs/cli)
 
---runInBand = 싱글 스레드 옵션(모노레포나 컴퓨터 성능 느릴때 테스트 속도 향상)
---maxWorkers = 멀티 스레드 개수 옵션(기본은 cup 수 - 1)
-파일 변경 추적 --watch = 변경된 부분만 테스트, -watchAll = 모두 다 테스트
-테스트를 다 마쳤는데 터미널에서 끝나지 않고 계속 남아있다면 오픈 핸들을 의심하자.
---detectOpenHandles로 네트워크 요청, 커넥션 확인해서 종료하기
-타이머 종료되지 않은 것은 clearAllTimers로 종료(fakeTimers 필요)
+--runInBand = 싱글 스레드 옵션(모노레포나 컴퓨터 성능 느릴때 테스트 속도 향상) <br>
+--maxWorkers = 멀티 스레드 개수 옵션(기본은 cup 수 - 1)<br>
+파일 변경 추적 --watch = 변경된 부분만 테스트, -watchAll = 모두 다 테스트<br>
+테스트를 다 마쳤는데 터미널에서 끝나지 않고 계속 남아있다면 오픈 핸들을 의심하자.<br>
+--detectOpenHandles로 네트워크 요청, 커넥션 확인해서 종료하기<br>
+타이머 종료되지 않은 것은 clearAllTimers로 종료(fakeTimers 필요)<br>
 도저히 못 찾겠으면 --forceExit 추가
 
 ---
+
+### 테스트 꿀팁
 
 - 기획자의 언어로 테스트 언어 작성하는 것이 좋음 + 개발 세부 사항
 - 테스트 작성하다 보면 기획의 허점 발견할 수 있음
