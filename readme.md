@@ -2,7 +2,7 @@
 >
 > 제로초 타임어택 15기 25/06/09 ~ (4주) 참여
 
-# Chapter 1
+# Section 1
 
 ## Jest 소개
 
@@ -36,7 +36,7 @@
 
 ---
 
-# Chapter 2
+# Section 2
 
 > 참고: https://github.com/zerocho/test-jest
 
@@ -109,3 +109,59 @@ BOTTOM-UP 방식
 mockist: 객체 간 상호작용(메시지)에 집중, 의존성 모킹, spyOn 등 사용
 
 classicist: 객체의 상태와 결과에 집중, 실제 의존성 사용
+
+---
+
+# Section 3.
+
+프론트엔드에서는 유닛 테스트와 통합 테스트의 경계가 모호
+
+백엔드에서는 통합 테스트와 E2E 테스트의 경계가 모호
+
+But, 유닛 테스트와 E2E 테스트가 서로 모호한 경우는 x
+
+BDD(Behavior Driven Development) 테스트
+
+- 유저의 행동을 시뮬레이션 하는 테스트
+
+supertest
+
+- 백엔드 통합 테스트 혹은 E2E 테스트에 활용
+- 임의로 서버를 특정 포트에서 돌려서 테스트를 수행함
+
+### 정리
+
+jest의 expect 외에 supertest만의 expect 메서드를 가지고 있음
+
+leaked-handles로 open handle 검사 기능
+
+beforeAll에서 DB 연결, 테이블 초기화
+
+afterAll에서 DB 연결 끊기, 타이머 정리하기, 서버 종료하기 등...(watch 되고 있는 것 없나 체크)
+
+## 추천
+
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+
+[MSW](https://mswjs.io/)
+네트워크 요청 목업
+
+hook 개별 테스트
+[renderHook](https://testing-library.com/docs/solid-testing-library/api/#renderhook) 활용
+
+toMatchSnapshot, toMatchInlineSnapshot
+
+- 절대 바뀌지 말아야 하는 값 박제 가능
+
+getByRole
+
+- getByRole은 React Testing Library에서 가장 권장되는 쿼리(query) 방식 중 하나로, 접근성(Accessibility, a11y) 역할(Role)을 기준으로 DOM 요소를 찾을 때 사용.
+- 사용자 입장에서 실제로 접근 가능한 요소를 찾고 싶을 때
+- 버튼, 입력창, 제목, 리스트 등 명확한 역할(role)이 있는 요소를 테스트할 때
+- 접근성 속성(aria-role 등)이 잘 적용되어 있는지 확인하고 싶을 때
+
+### E2E TEST
+
+[cypress](https://www.cypress.io/)
+
+[playwrite](https://playwright.dev/)
